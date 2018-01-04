@@ -15,5 +15,7 @@ app.get('/', (req, res) => {
   res.send({ hi: 'there' });
 });
 
-// Tells NODE to listen at port 5000; hence localhost:5000
-app.listen(5000);
+// Look at underlying environment and see if a PORT is declared
+const PORT = process.env.PORT || 5000; // 5000 is default value in case of null
+// Tells NODE which port to listen for
+app.listen(PORT);
