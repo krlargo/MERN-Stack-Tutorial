@@ -12,7 +12,7 @@ const app = express(); // The running express server
 
 // res.send(): close request and send response 'hi: 'there''
 app.get('/', (req, res) => {
-  res.send({ hi: 'there' });
+  res.send({ bye: 'buddy' });
 });
 
 // Look at underlying environment and see if a PORT is declared
