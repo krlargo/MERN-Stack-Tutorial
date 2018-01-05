@@ -19,6 +19,13 @@ passport.use(
   )
 );
 
+app.get(
+  '/auth/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email']
+  })
+);
+
 // Look at underlying environment and see if a PORT is declared
 const PORT = process.env.PORT || 5000; // 5000 is default value in case of null
 // Tells NODE which port to listen for
