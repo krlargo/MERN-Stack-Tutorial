@@ -19,12 +19,15 @@ passport.use(
   )
 );
 
+// Route Handler
 app.get(
   '/auth/google',
   passport.authenticate('google', {
     scope: ['profile', 'email']
   })
 );
+
+app.get('/auth/google/callback', passport.authenticate('google'));
 
 // Look at underlying environment and see if a PORT is declared
 const PORT = process.env.PORT || 5000; // 5000 is default value in case of null
