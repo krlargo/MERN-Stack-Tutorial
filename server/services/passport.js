@@ -5,6 +5,12 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users'); // One argument means 'load from mongoose'
 
+passport.serializeUser((user, done) => {
+  // Use mongoDB id since users won't necessarily have a googleID
+  // id is placed in cookie
+  done(null, user.id);
+});
+
 passport.use(
   new GoogleStrategy(
     {
