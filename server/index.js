@@ -1,7 +1,9 @@
 const express = require('express');
-require('./services/passport'); // Not assigned to a variable; simply needs to be called
+require('./services/passport'); // Not assigned to a variable; simply needs to be called and ran with no return value
 
 const app = express();
+// require() returns a function, 'app' is passed as parameter
+require('./routes/authRoutes')(app); // Assign 'app' methods that were set in authRoutes
 
 // Look at underlying environment and see if a PORT is declared
 const PORT = process.env.PORT || 5000; // 5000 is default value in case of null
