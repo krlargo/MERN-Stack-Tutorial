@@ -14,7 +14,13 @@ passport.use(
     },
     // Create new instance of user, storing its profile.id
     (accessToken, refreshToken, profile, done) => {
-      new User({ googleID: profile.id }).save();
+      User.findOne({ googleID: profile.id }).then(existingUser => {
+        if (existingUser) {
+          // Record already exists
+        } else {
+          new User({ googleID: profile.id }).save();
+        }
+      });
     }
   )
 );
