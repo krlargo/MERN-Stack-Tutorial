@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
 // Not assigned to a variable; simply needs to be called and ran with no return value
-require('./services/passport');
+// User import needs to come before passport import since passport uses User class model
 require('./models/User');
+require('./services/passport');
 
 mongoose.connect(keys.mongoURI);
 
