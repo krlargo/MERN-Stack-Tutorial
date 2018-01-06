@@ -1,7 +1,10 @@
 const express = require('express');
-require('./services/passport'); // Not assigned to a variable; simply needs to be called and ran with no return value
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+
+// Not assigned to a variable; simply needs to be called and ran with no return value
+require('./services/passport');
+require('./models/User');
 
 mongoose.connect(keys.mongoURI);
 
