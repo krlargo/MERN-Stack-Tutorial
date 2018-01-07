@@ -5,10 +5,18 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users'); // One argument means 'load from mongoose'
 
+// Takes user and converts into unique id
 passport.serializeUser((user, done) => {
   // Use mongoDB id since users won't necessarily have a googleID
   // id is placed in cookie
   done(null, user.id);
+});
+
+// Takes unique id and converts into corresponding user
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
+  });
 });
 
 passport.use(
