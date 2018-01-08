@@ -1,5 +1,5 @@
 // When importing .css file, we don't have any assignment, hence lack of 'VAR from'
-import 'materialize-css/dist/css/materalize.min.css';
+import 'materialize-css/dist/css/materialize.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
