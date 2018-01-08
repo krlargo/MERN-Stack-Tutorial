@@ -7,8 +7,9 @@ const SurveyNew = () => <h2>SuveryNew</h2>;
 const Landing = () => <h2>Landing</h2>;
 
 const App = () => {
+  // MaterializeCSS uses (at least one) className="container" to estimate sizing
   return (
-    <div>
+    <div className="container">
       <BrowserRouter>
         <div>
           <Header />
