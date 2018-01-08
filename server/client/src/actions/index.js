@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { FETCH_USER } from '.types';
+import { FETCH_USER } from './types';
 
-const fetchUser = () => {
+export const fetchUser = () => {
   // ReduxThunk pays attention to whether we pass back an action or a function
   // - if we pass a function, dispatch is automatically passed to ActionCreator
   return function(dispatch) {
